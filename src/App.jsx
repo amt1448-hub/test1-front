@@ -6,9 +6,13 @@ function App() {
 	const url = "https://test1-back-1049817508063.asia-northeast1.run.app";
 
 	const GetData = () => {
-		axios.get(url).then((res) => {
-			setData(res.data);
-		});
+		try {
+			axios.get(url).then((res) => {
+				setData(res.data);
+			});
+		} catch (error) {
+		    console.log(error.message);
+		}
 	};
 	return (
 		<div>
